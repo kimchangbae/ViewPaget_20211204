@@ -1,5 +1,6 @@
 package com.example.viewpaget_20211204.adapters
 
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -25,10 +26,13 @@ class MainViewPagerAdapter( fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         if (position == 0) {
+            Log.d("MainViewPagerAdapter", "이름 탭 클릭");
             return NameFragment()
         } else if(position == 1) {
+            Log.d("MainViewPagerAdapter", "주소 탭 클릭");
             return AddressFragment()
         } else {
+            Log.d("MainViewPagerAdapter", "나이 탭 클릭");
             return AgeFragment()
         }
     }

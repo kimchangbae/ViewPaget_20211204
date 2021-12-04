@@ -19,12 +19,41 @@ class MainViewPagerAdapter( fm : FragmentManager) : FragmentPagerAdapter(fm) {
             return "나이"
         }
     }
-
+/*
     override fun getCount(): Int {
         return 3
     }
+ */
+
+    override fun getCount() = 3
 
     override fun getItem(position: Int): Fragment {
+/*
+        when(position) {
+            0 -> {
+                Log.d("MainViewPagerAdapter", "이름 탭 클릭");
+                return NameFragment()
+            }
+
+            1 -> {
+                Log.d("MainViewPagerAdapter", "주소 탭 클릭");
+                return AddressFragment()
+            }
+
+            else -> {
+                Log.d("MainViewPagerAdapter", "나이 탭 클릭");
+                return AgeFragment()
+            }
+        }
+ */
+
+        return when(position) {
+            0 -> NameFragment()
+            1 -> AddressFragment()
+            else -> AgeFragment()
+        }
+
+/*
         if (position == 0) {
             Log.d("MainViewPagerAdapter", "이름 탭 클릭");
             return NameFragment()
@@ -35,6 +64,7 @@ class MainViewPagerAdapter( fm : FragmentManager) : FragmentPagerAdapter(fm) {
             Log.d("MainViewPagerAdapter", "나이 탭 클릭");
             return AgeFragment()
         }
+ */
     }
 
 }

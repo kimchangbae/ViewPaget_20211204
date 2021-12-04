@@ -11,6 +11,13 @@ import com.example.viewpaget_20211204.fragments.NameFragment
 class MainViewPagerAdapter( fm : FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getPageTitle(position: Int): CharSequence? {
+        return when(position) {
+            0 -> "이름"
+            1 -> "거주지"
+            else -> "나이"
+        }
+
+/*
         if(position == 0) {
             return "이름"
         } else if(position == 1) {
@@ -18,6 +25,7 @@ class MainViewPagerAdapter( fm : FragmentManager) : FragmentPagerAdapter(fm) {
         } else {
             return "나이"
         }
+ */
     }
 /*
     override fun getCount(): Int {
